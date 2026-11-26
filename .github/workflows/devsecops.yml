@@ -7,6 +7,7 @@ jobs:
       - name: Dependances
         run: |
           pwd
+          ls -ilah
           docker run --rm \
             -v "$PWD":/project \
             -v $HOME/.cache/trivy:/root/.cache/ \
