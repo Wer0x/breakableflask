@@ -17,13 +17,21 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
-  Dockerfile:
+Dockerfile:
     runs-on: ubuntu-latest
     needs: Dependances
     steps:
-      - name: Test Dockerfile
-        run: |
-          echo "ecrire ici le scrypt de contrôle du Dockerfile"
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Scan du Dockerfile avec Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          scan-ref: 'Dockerfile'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
   Deploy:
     runs-on: ubuntu-latest
     needs: Dockerfile
