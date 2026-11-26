@@ -28,7 +28,7 @@ Dockerfile:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
-          scan-ref: 'Dockerfile'
+          scan-ref: .
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
