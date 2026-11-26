@@ -4,6 +4,8 @@ jobs:
   Dependances:
     runs-on: ubuntu-latest
     steps:
+      - name: Récup code
+        uses: actions/checkout@v4
       - name: Debug
         run: ls -la
       - name: Dependances
