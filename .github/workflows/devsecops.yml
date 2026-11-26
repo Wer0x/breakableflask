@@ -17,6 +17,7 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
+          
 Dockerfile:
     runs-on: ubuntu-latest
     needs: Dependances
@@ -32,6 +33,7 @@ Dockerfile:
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
+          
   Deploy:
     runs-on: ubuntu-latest
     needs: Dockerfile
