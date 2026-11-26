@@ -4,6 +4,8 @@ jobs:
   Dependances:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug
+        run: ls -la
       - name: Dependances
         run: |
           pwd
